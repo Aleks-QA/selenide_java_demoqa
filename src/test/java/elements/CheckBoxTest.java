@@ -3,7 +3,7 @@ package elements;
 import com.codeborne.selenide.ElementsCollection;
 import org.junit.Test;
 
-import static junit.framework.Assert.assertEquals;
+import org.junit.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class CheckBoxTest {
         }
 
         // Проверяем что количество найденных элементов совпадает с количеством в массиве
-        assertEquals("Количество найденных элементов не совпадает с количеством в массиве", $$x("//span[@class='text-success']").size(), strArr.size());
+        Assert.assertEquals("Количество найденных элементов не совпадает с количеством в массиве", $$x("//span[@class='text-success']").size(), strArr.size());
         sleep(1000);
     }
 }
