@@ -1,15 +1,13 @@
 package elements;
 
-import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class ElementsTest {
+public class TextBoxTest {
 
     @Test
     public void testTextBox() {
