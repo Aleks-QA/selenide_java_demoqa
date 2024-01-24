@@ -1,8 +1,12 @@
 import org.junit.Test;
+import org.openqa.selenium.By;
+
+import java.io.File;
 
 import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selectors.byText;
 
 public class SelenideDoc {
     public void selenideDoc() {
@@ -18,7 +22,13 @@ public class SelenideDoc {
         $("#doubleClickBtn").click(usingJavaScript().offset(123, 222)); //Клик со сдвигом, чтобы кликать не в центр элемента
         $("#doubleClickBtn").doubleClick(); // двойной клик
         $("#doubleClickBtn").contextClick(); // ПКМ
+        $(By.id("userName")).scrollIntoView(true).setValue("qwerty");// скрол
+        $("[id=uploadPicture]").uploadFile(new File("./src/main/java/test_data/picture.jpg"));        //загрузить картинку в разделе Picture
 
+
+//        executeJavaScript("$('footer').hide();");//удалить элемент
+//        $.sendKeys ввод как в Selenium по умолчанию, то есть медленно и с генерацией событий.
+//        $.setValue установка значения поля через JavaScript.
 //        $(String cssSelector) - возвращает объект типа SelenideElement, который представляет первый найденный по CSS селектору элемент на странице
 //        $(By) - возвращает "первый SelenideElement" по локатору типа By
 //        $$(String cssSelector) - возвращает объект типа ElementsCollection, который представляет коллекцию всех элементов найденных по CSS селектору
