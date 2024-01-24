@@ -1,11 +1,6 @@
 package forms;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 
 import java.io.File;
 
@@ -31,7 +26,7 @@ public class PracticeFormTest {
         $("#userEmail").sendKeys("username@example.com");
 
         //заполнить gender поле
-        $x("//label[@for=\"gender-radio-" + (int) ( Math.random() *  3 + 1 ) +"\"]").click(); //random gender
+        $x("//label[@for=\"gender-radio-" + (int) (Math.random() * 3 + 1) + "\"]").click(); //random gender
 
         //заполнить "Number"
         $("#userNumber").sendKeys("8888888888");
@@ -47,7 +42,7 @@ public class PracticeFormTest {
         $("#subjectsInput").setValue("Maths").pressEnter();
 
         //заполнить поле Hobbies
-        $x("//div[@id=\"hobbiesWrapper\"]/div[2]/div[" + (int) ( Math.random() *  3 + 1 ) +"]").click();
+        $x("//div[@id=\"hobbiesWrapper\"]/div[2]/div[" + (int) (Math.random() * 3 + 1) + "]").click();
 
         //загрузить картинку в разделе Picture
         $("[id=uploadPicture]").uploadFile(new File("./src/main/java/test_data/picture.jpg"));
