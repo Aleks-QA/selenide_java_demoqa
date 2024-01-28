@@ -15,90 +15,90 @@ import static com.codeborne.selenide.Selenide.*;
 public class PracticeFormPage {
 
     // локатор поля ввода имени пользователя
-    SelenideElement inputFirstName = Selenide.$("#firstName");
+    private final SelenideElement inputFirstName = Selenide.$("#firstName");
 
     // локатор поля ввода фамилии пользователя
-    SelenideElement inputLastName = Selenide.$("#lastName");
+    private final SelenideElement inputLastName = Selenide.$("#lastName");
 
     // локатор поля ввода email пользователя
-    SelenideElement inputEmail = Selenide.$("#userEmail");
+    private final SelenideElement inputEmail = Selenide.$("#userEmail");
 
     // локатор радиокнопки гендера, случайный выбор
-    SelenideElement randomGenderRadioButton = Selenide.$x("//label[@for=\"gender-radio-" + (int) (Math.random() * 3 + 1) + "\"]");
+    private final SelenideElement randomGenderRadioButton = Selenide.$x("//label[@for=\"gender-radio-" + (int) (Math.random() * 3 + 1) + "\"]");
 
     // локатор поля ввода номера телефона пользователя
-    SelenideElement inputNumber = Selenide.$("#userNumber");
+    private final SelenideElement inputNumber = Selenide.$("#userNumber");
 
     // локатор поля даты рождения пользователя
-    SelenideElement fieldDateOfBirth = Selenide.$("#dateOfBirthInput");
+    private final SelenideElement fieldDateOfBirth = Selenide.$("#dateOfBirthInput");
 
     // локатор поля ввода месяца рождения пользователя
-    SelenideElement selectMonthDateOfBirth = Selenide.$(".react-datepicker__month-select");
+    private final SelenideElement selectMonthDateOfBirth = Selenide.$(".react-datepicker__month-select");
 
     // локатор поля ввода года рождения пользователя
-    SelenideElement selectYearDateOfBirth = Selenide.$(".react-datepicker__year-select");
+    private final SelenideElement selectYearDateOfBirth = Selenide.$(".react-datepicker__year-select");
 
     // локатор поля ввода дня рождения пользователя(захардкожено 20)
-    SelenideElement selectDayDateOfBirth = Selenide.$(".react-datepicker__day--020:not(.react-datepicker__day--outside-month)");
+    private final SelenideElement selectDayDateOfBirth = Selenide.$(".react-datepicker__day--020:not(.react-datepicker__day--outside-month)");
 
     // локатор поля ввода предметов
-    SelenideElement inputSubjects = Selenide.$("#subjectsInput");
+    private final SelenideElement inputSubjects = Selenide.$("#subjectsInput");
 
     // локатор радиокнопки хобби, случайный выбор
-    SelenideElement randomHobbiesRadioButton = Selenide.$x("//div[@id=\"hobbiesWrapper\"]/div[2]/div[" + (int) (Math.random() * 3 + 1) + "]");
+    private final SelenideElement randomHobbiesRadioButton = Selenide.$x("//div[@id=\"hobbiesWrapper\"]/div[2]/div[" + (int) (Math.random() * 3 + 1) + "]");
 
     // локатор кнопки загрузки изображения
-    SelenideElement buttonUploadPicture = Selenide.$("#uploadPicture");
+    private final SelenideElement buttonUploadPicture = Selenide.$("#uploadPicture");
 
     // локатор ввода адреса
-    SelenideElement inputCurrentAddress = Selenide.$("#currentAddress");
+    private final SelenideElement inputCurrentAddress = Selenide.$("#currentAddress");
 
     // локатор открытия выпадающего списка штатов
-    SelenideElement dropDownState = Selenide.$("#state");
+    private final SelenideElement dropDownState = Selenide.$("#state");
 
     // локатор выпадающего списка штатов
-    SelenideElement selectState = Selenide.$("#stateCity-wrapper");
+    private final SelenideElement selectState = Selenide.$("#stateCity-wrapper");
 
     // локатор открытия выпадающего списка городов в штате
-    SelenideElement dropDownCity = Selenide.$("#city");
+    private final SelenideElement dropDownCity = Selenide.$("#city");
 
     // локатор выпадающего списка городов в штате
-    SelenideElement selectCity = Selenide.$("#city");
+    private final SelenideElement selectCity = Selenide.$("#city");
 
     // локатор кнопки отправить форму
-    SelenideElement buttonSubmit = Selenide.$("#submit");
+    private final SelenideElement buttonSubmit = Selenide.$("#submit");
 
     // локатор поля имени пользователя в отправленной форме
-    SelenideElement fieldNamePracticeForm = Selenide.$x("//tbody/tr[1]/td[2]");
+    private final SelenideElement fieldNamePracticeForm = Selenide.$x("//tbody/tr[1]/td[2]");
 
     // локатор поля почты в отправленной форме
-    SelenideElement fieldEmailPracticeForm = Selenide.$x("//tbody/tr[2]/td[2]");
+    private final SelenideElement fieldEmailPracticeForm = Selenide.$x("//tbody/tr[2]/td[2]");
 
     // локатор поля номера телефона в отправленной форм
-    SelenideElement fieldNumberPracticeForm = Selenide.$x("//tbody/tr[4]/td[2]");
+    private final SelenideElement fieldNumberPracticeForm = Selenide.$x("//tbody/tr[4]/td[2]");
 
     // локатор поля адреса в отправленной форме
-    SelenideElement fieldCurrentAddressPracticeForm = Selenide.$x("//tbody/tr[9]/td[2]");
+    private final SelenideElement fieldCurrentAddressPracticeForm = Selenide.$x("//tbody/tr[9]/td[2]");
 
 
     //удалить footer
-    public void removeFooter(){
+    public void removeFooter() {
         executeJavaScript("$('footer').hide();");
     }
 
     //заполнить firstName
-    public void setFirstName(String NAME) {
-        inputFirstName.setValue(NAME);
+    public void setFirstName(String firstName) {
+        inputFirstName.setValue(firstName);
     }
 
     //заполнить lastName
-    public void setLastName(String LAST_NAME) {
-        inputLastName.setValue(LAST_NAME);
+    public void setLastName(String lastName) {
+        inputLastName.setValue(lastName);
     }
 
     //заполнить email
-    public void setEmail(String EMAIL) {
-        inputEmail.setValue(EMAIL);
+    public void setEmail(String email) {
+        inputEmail.setValue(email);
     }
 
     //выбрать случайный gender
@@ -107,21 +107,21 @@ public class PracticeFormPage {
     }
 
     //заполнить "Number"
-    public void setNumber(String NUMBER) {
-        inputNumber.setValue(NUMBER);
+    public void setNumber(String number) {
+        inputNumber.setValue(number);
     }
 
     //выбрать "Date of Birth"
-    public void setDateOfBirth(String MONTH, String YEAR) {
+    public void setDateOfBirth(String month, String year) {
         fieldDateOfBirth.click();
-        selectMonthDateOfBirth.selectOption(MONTH);
-        selectYearDateOfBirth.selectOption(YEAR);
+        selectMonthDateOfBirth.selectOption(month);
+        selectYearDateOfBirth.selectOption(year);
         selectDayDateOfBirth.click();
     }
 
     //заполнить поле Subjects
-    public void setSubjects(String SUBJECTS) {
-        inputSubjects.setValue(SUBJECTS).pressEnter();
+    public void setSubjects(String subjects) {
+        inputSubjects.setValue(subjects).pressEnter();
     }
 
     //выбрать случайное хобби
@@ -130,21 +130,21 @@ public class PracticeFormPage {
     }
 
     //загрузить картинку
-    public void uploadPicture(String PATH) {
-        buttonUploadPicture.uploadFile(new File(PATH));
+    public void uploadPicture(String path) {
+        buttonUploadPicture.uploadFile(new File(path));
     }
 
     //заполнить "Current Address"
-    public void setCurrentAddress(String ADDRESS) {
-        inputCurrentAddress.setValue(ADDRESS).pressEnter();
+    public void setCurrentAddress(String address) {
+        inputCurrentAddress.setValue(address).pressEnter();
     }
 
     //заполнить "State and City"
-    public void setStateAndCity(String STATE, String CITY) {
+    public void setStateAndCity(String state, String city) {
         dropDownState.scrollIntoView(true).click();
-        selectState.scrollIntoView(true).$(byText(STATE)).click();
+        selectState.scrollIntoView(true).$(byText(state)).click();
         dropDownCity.scrollIntoView(true).click();
-        selectCity.scrollIntoView(true).$(byText(CITY)).click();
+        selectCity.scrollIntoView(true).$(byText(city)).click();
     }
 
     //кликнуть кнопку "Submit"
@@ -152,13 +152,15 @@ public class PracticeFormPage {
         buttonSubmit.scrollIntoView(true).click(usingJavaScript().offset(12, 22));
     }
 
-    //проверить, что форма заполнена
-    public void assertFormFilled(String NAME, String LAST_NAME, String NUMBER, String EMAIL, String ADDRESS) {
+    /**
+     *  Проверка, что форма заполнена корректно
+     */
+    public void assertFormFilled(final String firstName, final String lastName, final String number, final String email, final String address) {
         fieldNamePracticeForm.shouldBe(visible);
-        fieldNamePracticeForm.shouldHave(text(NAME + " " + LAST_NAME));
-        fieldNumberPracticeForm.shouldHave(text(NUMBER));
-        fieldEmailPracticeForm.shouldHave(text(EMAIL));
-        fieldCurrentAddressPracticeForm.shouldHave(text(ADDRESS));
+        fieldNamePracticeForm.shouldHave(text(firstName + " " + lastName));
+        fieldNumberPracticeForm.shouldHave(text(number));
+        fieldEmailPracticeForm.shouldHave(text(email));
+        fieldCurrentAddressPracticeForm.shouldHave(text(address));
     }
 
 }
