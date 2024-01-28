@@ -3,6 +3,8 @@ package elements;
 import org.junit.Test;
 
 import org.junit.Assert;
+import pom.RadioButtonPage;
+
 import static com.codeborne.selenide.Selenide.*;
 
 public class RadioButtonTest {
@@ -11,16 +13,11 @@ public class RadioButtonTest {
     public void radioButtonTest() {
         open("https://demoqa.com/radio-button");
 
-        // Impressive
-        $("label[class*=\"custom-control\"][for=\"impressiveRadio\"]").click();
-        Assert.assertEquals("Текст результата не совпадает с выбранным  radioButton", $(".text-success").text(), $("label[class*=\"custom-control\"][for=\"impressiveRadio\"]").text());
-        sleep(1000);
+        RadioButtonPage radioButtonPage = new RadioButtonPage();
+        radioButtonPage.clickYesRadioButton();
+        Assert.assertEquals("Текст результата не совпадает с выбранным radioButton", "Yes", radioButtonPage.getMessage());
 
-        // Yes
-        $("label[class*=\"custom-control\"][for=\"yesRadio\"]").click();
-        Assert.assertEquals("Текст результата не совпадает с выбранным  radioButton", $(".text-success").text(), $("label[class*=\"custom-control\"][for=\"yesRadio\"]").text());
-        sleep(1000);
-
+        radioButtonPage.clickImpressiveRadioButton();
+        Assert.assertEquals("Текст результата не совпадает с выбранным radioButton", "Impressive", radioButtonPage.getMessage());
     }
-
 }
