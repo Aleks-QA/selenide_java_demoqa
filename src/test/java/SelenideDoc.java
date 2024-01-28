@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.openqa.selenium.By;
 
 import java.io.File;
@@ -24,6 +25,7 @@ public class SelenideDoc {
         $("[id=uploadPicture]").uploadFile(new File("./src/main/java/test_data/picture.jpg"));        //загрузить картинку в разделе Picture
 
 
+//        Assert.assertTrue(textBoxPage.getOutputFullName().contains(fullName)); // проверка вхождения подстроки в строке
 //        executeJavaScript("$('footer').hide();");//удалить элемент
 //        $.sendKeys ввод как в Selenium по умолчанию, то есть медленно и с генерацией событий.
 //        $.setValue установка значения поля через JavaScript.

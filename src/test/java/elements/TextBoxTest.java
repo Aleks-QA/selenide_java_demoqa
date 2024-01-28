@@ -1,7 +1,9 @@
 package elements;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import pom.TextBoxPage;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -11,20 +13,24 @@ public class TextBoxTest {
 
     @Test
     public void testTextBox() {
-        open("https://demoqa.com/elements");
-        $x("//span[text()=\"Text Box\"]").scrollIntoView(true).click();
-        $(By.id("userName")).scrollIntoView(true).setValue("qwerty");
-        $(By.id("userEmail")).scrollIntoView(true).setValue("qwerty@gmail.com");
-        $(By.id("currentAddress")).scrollIntoView(true).setValue("qwerty 142");
-        $(By.id("permanentAddress")).scrollIntoView(true).setValue("Berlin n/a");
-        $x("//button[text()=\"Submit\"]").scrollIntoView(true).click();
-        sleep(3000);
+        open("https://demoqa.com/text-box");
 
-        $(By.id("output")).shouldBe(visible);
-        $x("//div[@id=\"output\"]/div/p[1]").shouldHave(text("qwerty"));
-        $x("//div[@id=\"output\"]/div/p[2]").shouldHave(text("qwerty@gmail.com"));
-        $x("//div[@id=\"output\"]/div/p[3]").shouldHave(text("qwerty 142"));
-        $x("//div[@id=\"output\"]/div/p[4]").shouldHave(text("Berlin n/a"));
+        final String fullName = "qwerty qwerty";
+        final String email = "qwerty@gmail.com";
+        final String currentAddress = "qwerty 142";
+        final String permanentAddress = "Berlin n/a";
+
+        TextBoxPage textBoxPage = new TextBoxPage();
+        textBoxPage.setFullName(fullName);
+        textBoxPage.setEmail(email);
+        textBoxPage.setCurrentAddress(currentAddress);
+        textBoxPage.setPermanentAddress(permanentAddress);
+        textBoxPage.clickSubmit();
+        textBoxPage.visibilityFieldOutput();
+
+        Assert.assertTrue(textBoxPage.getOutputFullName().contains(fullName));
+        Assert.assertTrue(textBoxPage.getOutputEmail().contains(email));
+        Assert.assertTrue(textBoxPage.getOutputCurrentAddress().contains(currentAddress));
+        Assert.assertTrue(textBoxPage.getOutputPermanentAddress().contains(permanentAddress));
     }
-
 }
