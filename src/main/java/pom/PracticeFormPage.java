@@ -78,7 +78,6 @@ public class PracticeFormPage {
     // локатор поля адреса в отправленной форме
     private final SelenideElement fieldCurrentAddressPracticeForm = Selenide.$x("//tbody/tr[9]/td[2]");
 
-
     //удалить footer
     public void removeFooter() {
         executeJavaScript("$('footer').hide();");

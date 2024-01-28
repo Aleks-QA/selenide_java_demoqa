@@ -2,10 +2,8 @@ package elements;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import pom.TextBoxPage;
 
-import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 
@@ -28,6 +26,7 @@ public class TextBoxTest {
         textBoxPage.clickSubmit();
         textBoxPage.visibilityFieldOutput();
 
+        // проверка вхождения переменной в соответствующих полях ввода
         Assert.assertTrue(textBoxPage.getOutputFullName().contains(fullName));
         Assert.assertTrue(textBoxPage.getOutputEmail().contains(email));
         Assert.assertTrue(textBoxPage.getOutputCurrentAddress().contains(currentAddress));
