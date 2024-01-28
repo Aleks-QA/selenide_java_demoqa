@@ -6,8 +6,6 @@ import com.codeborne.selenide.SelenideElement;
 import java.io.File;
 
 import static com.codeborne.selenide.ClickOptions.usingJavaScript;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -153,14 +151,39 @@ public class PracticeFormPage {
     }
 
     /**
-     *  Проверка, что форма заполнена корректно
+     * Вернуть значение поля имени и фамилии из таблицы формы
+     *
+     * @return String
      */
-    public void assertFormFilled(final String firstName, final String lastName, final String number, final String email, final String address) {
-        fieldNamePracticeForm.shouldBe(visible);
-        fieldNamePracticeForm.shouldHave(text(firstName + " " + lastName));
-        fieldNumberPracticeForm.shouldHave(text(number));
-        fieldEmailPracticeForm.shouldHave(text(email));
-        fieldCurrentAddressPracticeForm.shouldHave(text(address));
+    public String getNamePracticeForm() {
+        return fieldNamePracticeForm.getText();
+    }
+
+    /**
+     * Вернуть значение поля номера телефона из таблицы формы
+     *
+     * @return String
+     */
+    public String getNumberPracticeForm() {
+        return fieldNumberPracticeForm.getText();
+    }
+
+    /**
+     * Вернуть значение поля email из таблицы формы
+     *
+     * @return String
+     */
+    public String getEmailPracticeForm() {
+        return fieldEmailPracticeForm.getText();
+    }
+
+    /**
+     * Вернуть значение поля адреса из таблицы формы
+     *
+     * @return String
+     */
+    public String getAddressPracticeForm() {
+        return fieldCurrentAddressPracticeForm.getText();
     }
 
 }

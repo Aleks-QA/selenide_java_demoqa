@@ -1,5 +1,6 @@
 package forms;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -42,6 +43,10 @@ public class PracticeFormTest {
         practiceFormPage.setStateAndCity(state, city);
         practiceFormPage.clickSubmitButton();
 
-        practiceFormPage.assertFormFilled(firstName, lastName, number, email, address);
+        // проверка корректности заполненных полей
+        Assert.assertEquals(practiceFormPage.getNamePracticeForm(), firstName + " " + lastName);
+        Assert.assertEquals(practiceFormPage.getEmailPracticeForm(), email);
+        Assert.assertEquals(practiceFormPage.getNumberPracticeForm(), number);
+        Assert.assertEquals(practiceFormPage.getAddressPracticeForm(), address);
     }
 }
