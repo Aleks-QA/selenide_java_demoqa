@@ -1,8 +1,9 @@
 package elements;
 
+import org.junit.Assert;
 import org.junit.Test;
+import pom.ButtonsPage;
 
-import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ButtonsTest {
@@ -11,15 +12,14 @@ public class ButtonsTest {
     public void buttonsTest() {
         open("https://demoqa.com/buttons");
 
-        $("#doubleClickBtn").doubleClick();
-        $("#rightClickBtn").contextClick();
-        $x("//div/div[3]/button").click();
+        ButtonsPage buttonsPage = new ButtonsPage();
+        buttonsPage.doubleClick();
+        buttonsPage.rightClick();
+        buttonsPage.dynamicClick();
 
         // Проверяем
-        $("#doubleClickMessage").shouldHave(text("You have done a double click"));
-        $("#rightClickMessage").shouldHave(text("You have done a right click"));
-        $("#dynamicClickMessage").shouldHave(text("You have done a dynamic click"));
-        sleep(1000);
-
+        Assert.assertEquals("You have done a double click", buttonsPage.getDoubleClickMessage());
+        Assert.assertEquals("You have done a right click", buttonsPage.getRightClickMessage());
+        Assert.assertEquals("You have done a dynamic click", buttonsPage.getDynamicClickMessage());
     }
 }
