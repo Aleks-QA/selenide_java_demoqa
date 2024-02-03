@@ -9,28 +9,42 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
+/**
+ * Страница "CheckBox".
+ */
 public class CheckBoxPage {
 
-    // чекбокс дерева
-    final SelenideElement checkBox = $x("//span[@class=\"rct-checkbox\"]");
+    /**
+     * Чекбокс дерева.
+     */
+    private final SelenideElement checkBox = $x("//span[@class=\"rct-checkbox\"]");
 
-    // кнопка свернутого элемента дерева
-    final SelenideElement buttonCollapseTree = $x("//li[contains(@class,'rct-node-collapsed')]/span/button");
+    /**
+     * Кнопка свернутого элемента дерева.
+     */
+    private final SelenideElement buttonCollapseTree = $x("//li[contains(@class,'rct-node-collapsed')]/span/button");
 
-    // название видимого элемента дерева
-    final ElementsCollection titleElementTree = $$x("//span[@class=\"rct-title\"]");
+    /**
+     * Название видимого элемента дерева.
+     */
+    private final ElementsCollection titleElementTree = $$x("//span[@class=\"rct-title\"]");
 
-    // сообщение об отмеченных элементах
-    final ElementsCollection messageSuccess = $$x("//span[@class='text-success']");
+    /**
+     * Сообщение об отмеченных элементах.
+     */
+    private final ElementsCollection messageSuccess = $$x("//span[@class='text-success']");
 
 
-    // отметить все элементы дерева
+    /**
+     * Отметить все элементы дерева.
+     */
     public void checkAllTheBoxes() {
         checkBox.click();
     }
 
     /**
-     * Если найден элемент с классом который говорит что раздел не раскрыт, то открываем его, иначе выходим
+     * Если найден элемент с классом который говорит что раздел не раскрыт,
+     * то открываем его, иначе выходим
      */
     public void uncoverAllTheElementsTree() {
         while (true) {

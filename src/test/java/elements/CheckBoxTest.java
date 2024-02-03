@@ -8,7 +8,7 @@ import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class CheckBoxTest extends BaseTest{
+public class CheckBoxTest extends BaseTest {
 
     @Test
     public void checkBoxTest() {

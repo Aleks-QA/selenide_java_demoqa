@@ -5,51 +5,84 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
+/**
+ * Страница "Buttons".
+ */
 public class ButtonsPage {
-    // локатор кнопки которую нужно щелкнуть 2 раза
+    /**
+     * Локатор кнопки которую нужно щелкнуть 2 раза.
+     */
     private final SelenideElement doubleClickBtn = $("#doubleClickBtn");
 
-    // локатор кнопки которую нужно щелкнуть ПКМ
+    /**
+     * Локатор кнопки которую нужно щелкнуть ПКМ.
+     */
     private final SelenideElement rightClickBtn = $("#rightClickBtn");
 
-    // локатор кнопки которую нужно щелкнуть
+    /**
+     * Локатор кнопки которую нужно щелкнуть.
+     */
     private final SelenideElement dynamicClickBtn = $x("//div/div[3]/button");
 
-    // локатор сообщения о нажатии кнопки двойной клик
+    /**
+     * Локатор сообщения о нажатии кнопки двойной клик.
+     */
     private final SelenideElement doubleClickMessage = $("#doubleClickMessage");
 
-    // локатор сообщения о нажатии кнопки ПКМ
+    /**
+     * Локатор сообщения о нажатии кнопки ПКМ.
+     */
     private final SelenideElement rightClickMessage = $("#rightClickMessage");
 
-    // локатор сообщения о нажатии кнопки
+    /**
+     * Локатор сообщения о нажатии кнопки dynamic.
+     */
     private final SelenideElement dynamicClickMessage = $("#dynamicClickMessage");
 
-    // сделать двойной клик по кнопке doubleClickBtn
+    /**
+     * Сделать двойной клик по кнопке doubleClickBtn.
+     */
     public void doubleClick() {
         doubleClickBtn.doubleClick();
     }
 
-    // нажать ПКМ по кнопке rightClickBtn
+    /**
+     * Нажать ПКМ по кнопке rightClickBtn.
+     */
     public void rightClick() {
         rightClickBtn.contextClick();
     }
 
-    // нажать на кнопку dynamicClickBtn
+    /**
+     * Нажать на кнопку dynamicClickBtn.
+     */
     public void dynamicClick() {
         dynamicClickBtn.click();
     }
 
-    // вернуть сообщение о нажатии кнопки doubleClickBtn
+    /**
+     * Получить сообщение о нажатии кнопки doubleClickBtn.
+     *
+     * @return String сообщение о нажатии кнопки doubleClickBtn.
+     */
     public String getDoubleClickMessage() {
         return doubleClickMessage.getText();
     }
 
-    // вернуть сообщение о нажатии кнопки rightClickBtn
+    /**
+     * Вернуть сообщение о нажатии кнопки rightClickBtn.
+     *
+     * @return String сообщение о нажатии кнопки rightClickBtn.
+     */
     public String getRightClickMessage() {
         return rightClickMessage.getText();
     }
 
-    // вернуть сообщение о нажатии кнопки dynamicClickBtn
+    /**
+     * Вернуть сообщение о нажатии кнопки dynamicClickBtn.
+     *
+     * @return String сообщение о нажатии кнопки dynamicClickBtn.
+     */
     public String getDynamicClickMessage() {
         return dynamicClickMessage.getText();
     }

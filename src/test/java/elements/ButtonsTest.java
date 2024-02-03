@@ -6,7 +6,7 @@ import pom.ButtonsPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class ButtonsTest extends BaseTest{
+public class ButtonsTest extends BaseTest {
 
     @Test
     public void buttonsTest() {
@@ -17,7 +17,7 @@ public class ButtonsTest extends BaseTest{
         buttonsPage.rightClick();
         buttonsPage.dynamicClick();
 
-        // Проверяем
+        // Проверяем нажатие на кнопки
         Assertions.assertEquals("You have done a double click", buttonsPage.getDoubleClickMessage());
         Assertions.assertEquals("You have done a right click", buttonsPage.getRightClickMessage());
         Assertions.assertEquals("You have done a dynamic click", buttonsPage.getDynamicClickMessage());

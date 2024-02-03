@@ -5,63 +5,106 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
+/**
+ * Страница "TextBox"
+ */
 public class TextBoxPage {
-    // локатор поля ввода имени
+    /**
+     * Локатор поля ввода имени.
+     */
     private final SelenideElement fieldFullName = $("#userName");
 
-    // локатор поля ввода почты
+    /**
+     * Локатор поля ввода почты.
+     */
     private final SelenideElement fieldEmail = $("#userEmail");
 
-    // локатор поля ввода текущего адреса
+    /**
+     * Локатор поля ввода текущего адреса.
+     */
     private final SelenideElement fieldCurrentAddress = $("#currentAddress");
 
-    // локатор поля ввода постоянного адреса
+    /**
+     * Локатор поля ввода постоянного адреса.
+     */
     private final SelenideElement fieldPermanentAddress = $("#permanentAddress");
 
-    // локатор кнопки отправить
+    /**
+     * Локатор кнопки отправить.
+     */
     private final SelenideElement submitButton = $x("//button[text()=\"Submit\"]");
 
-    // локатор поля вывода заполненных полей
+    /**
+     * Локатор поля вывода заполненных полей.
+     */
     private final SelenideElement fieldOutput = $("#output");
 
-    // локатор поля вывода введенного имени
+    /**
+     * Локатор поля вывода введенного имени.
+     */
     private final SelenideElement fieldOutputFullName = $x("//div[@id=\"output\"]/div/p[1]");
 
-    // локатор поля вывода введенной почты
+    /**
+     * Локатор поля вывода введенной почты.
+     */
     private final SelenideElement fieldOutputEmail = $x("//div[@id=\"output\"]/div/p[2]");
 
-    // локатор поля вывода введенного текущего адреса
+    /**
+     * Локатор поля вывода введенного текущего адреса.
+     */
     private final SelenideElement fieldOutputCurrentAddress = $x("//div[@id=\"output\"]/div/p[3]");
 
-    // локатор поля вывода введенного постоянного адреса
+    /**
+     * Локатор поля вывода введенного постоянного адреса.
+     */
     private final SelenideElement fieldOutputPermanentAddress = $x("//div[@id=\"output\"]/div/p[4]");
 
-    // ввести имя
-    public void setFullName(String name) {
+    /**
+     * Ввести имя.
+     *
+     * @param name имя
+     */
+    public void setFullName(final String name) {
         fieldFullName.scrollIntoView(true).setValue(name);
     }
 
-    // ввести почту
-    public void setEmail(String email) {
+    /**
+     * Ввести почту.
+     *
+     * @param email почта
+     */
+    public void setEmail(final String email) {
         fieldEmail.scrollIntoView(true).setValue(email);
     }
 
-    // ввести текущий адрес
-    public void setCurrentAddress(String currentAddress) {
+    /**
+     * Ввести текущий адрес.
+     *
+     * @param currentAddress текущий адрес
+     */
+    public void setCurrentAddress(final String currentAddress) {
         fieldCurrentAddress.scrollIntoView(true).setValue(currentAddress);
     }
 
-    // ввести постоянный адрес
-    public void setPermanentAddress(String permanentAddress) {
+    /**
+     * Ввести постоянный адрес.
+     *
+     * @param permanentAddress постоянный адрес
+     */
+    public void setPermanentAddress(final String permanentAddress) {
         fieldPermanentAddress.scrollIntoView(true).setValue(permanentAddress);
     }
 
-    // отправить форму
+    /**
+     * Отправить форму.
+     */
     public void clickSubmit() {
         submitButton.scrollIntoView(true).click();
     }
 
-    //проверить видимость поля вывода введенных значений
+    /**
+     * Проверить видимость поля вывода введенных значений.
+     */
     public void visibilityFieldOutput() {
         fieldOutput.shouldBe(visible);
     }
