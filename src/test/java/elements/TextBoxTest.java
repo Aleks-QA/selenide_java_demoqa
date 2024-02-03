@@ -1,13 +1,13 @@
 package elements;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import pom.TextBoxPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
 
-public class TextBoxTest {
+public class TextBoxTest extends BaseTest {
 
     @Test
     public void testTextBox() {
@@ -27,9 +27,9 @@ public class TextBoxTest {
         textBoxPage.visibilityFieldOutput();
 
         // проверка вхождения переменной в соответствующих полях ввода
-        Assert.assertTrue(textBoxPage.getOutputFullName().contains(fullName));
-        Assert.assertTrue(textBoxPage.getOutputEmail().contains(email));
-        Assert.assertTrue(textBoxPage.getOutputCurrentAddress().contains(currentAddress));
-        Assert.assertTrue(textBoxPage.getOutputPermanentAddress().contains(permanentAddress));
+        Assertions.assertTrue(textBoxPage.getOutputFullName().contains(fullName));
+        Assertions.assertTrue(textBoxPage.getOutputEmail().contains(email));
+        Assertions.assertTrue(textBoxPage.getOutputCurrentAddress().contains(currentAddress));
+        Assertions.assertTrue(textBoxPage.getOutputPermanentAddress().contains(permanentAddress));
     }
 }

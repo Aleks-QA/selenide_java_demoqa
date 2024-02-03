@@ -1,16 +1,17 @@
 package forms;
 
-import org.junit.Assert;
-import org.junit.Test;
+import elements.BaseTest;
 
 import static com.codeborne.selenide.Selenide.*;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import pom.PracticeFormPage;
 
 
 //@Tag("AllTest")
 //@Tag("PracticeFormTest")
-public class PracticeFormTest {
+public class PracticeFormTest extends BaseTest {
 
     @Test
     public void practiceFormTest() {
@@ -44,9 +45,9 @@ public class PracticeFormTest {
         practiceFormPage.clickSubmitButton();
 
         // проверка корректности заполненных полей
-        Assert.assertEquals(practiceFormPage.getNamePracticeForm(), firstName + " " + lastName);
-        Assert.assertEquals(practiceFormPage.getEmailPracticeForm(), email);
-        Assert.assertEquals(practiceFormPage.getNumberPracticeForm(), number);
-        Assert.assertEquals(practiceFormPage.getAddressPracticeForm(), address);
+        Assertions.assertEquals(practiceFormPage.getNamePracticeForm(), firstName + " " + lastName);
+        Assertions.assertEquals(practiceFormPage.getEmailPracticeForm(), email);
+        Assertions.assertEquals(practiceFormPage.getNumberPracticeForm(), number);
+        Assertions.assertEquals(practiceFormPage.getAddressPracticeForm(), address);
     }
 }

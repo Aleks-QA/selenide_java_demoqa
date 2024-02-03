@@ -1,13 +1,12 @@
 package elements;
 
-import org.junit.Test;
-
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import pom.RadioButtonPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class RadioButtonTest {
+public class RadioButtonTest extends BaseTest{
 
     @Test
     public void radioButtonTest() {
@@ -15,9 +14,9 @@ public class RadioButtonTest {
 
         RadioButtonPage radioButtonPage = new RadioButtonPage();
         radioButtonPage.clickYesRadioButton();
-        Assert.assertEquals("Текст результата не совпадает с выбранным radioButton", "Yes", radioButtonPage.getMessage());
+        Assertions.assertEquals("Yes", radioButtonPage.getMessage(), "Текст результата не совпадает с выбранным radioButton");
 
         radioButtonPage.clickImpressiveRadioButton();
-        Assert.assertEquals("Текст результата не совпадает с выбранным radioButton", "Impressive", radioButtonPage.getMessage());
+        Assertions.assertEquals("Impressive", radioButtonPage.getMessage(), "Текст результата не совпадает с выбранным radioButton");
     }
 }

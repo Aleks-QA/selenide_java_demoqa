@@ -1,12 +1,12 @@
 package elements;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import pom.ButtonsPage;
 
 import static com.codeborne.selenide.Selenide.*;
 
-public class ButtonsTest {
+public class ButtonsTest extends BaseTest{
 
     @Test
     public void buttonsTest() {
@@ -18,8 +18,8 @@ public class ButtonsTest {
         buttonsPage.dynamicClick();
 
         // Проверяем
-        Assert.assertEquals("You have done a double click", buttonsPage.getDoubleClickMessage());
-        Assert.assertEquals("You have done a right click", buttonsPage.getRightClickMessage());
-        Assert.assertEquals("You have done a dynamic click", buttonsPage.getDynamicClickMessage());
+        Assertions.assertEquals("You have done a double click", buttonsPage.getDoubleClickMessage());
+        Assertions.assertEquals("You have done a right click", buttonsPage.getRightClickMessage());
+        Assertions.assertEquals("You have done a dynamic click", buttonsPage.getDynamicClickMessage());
     }
 }
