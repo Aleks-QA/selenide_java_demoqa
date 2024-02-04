@@ -1,6 +1,8 @@
 package elements;
 
+import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pom.RadioButtonPage;
 
@@ -9,6 +11,8 @@ import static com.codeborne.selenide.Selenide.*;
 public class RadioButtonTest extends BaseTest {
 
     @Test
+    @Epic(value = "Elements")
+    @DisplayName("Проверка работы радио-кнопок")
     public void radioButtonTest() {
         open("https://demoqa.com/radio-button");
 

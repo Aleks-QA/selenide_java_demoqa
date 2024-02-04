@@ -4,7 +4,9 @@ import elements.BaseTest;
 
 import static com.codeborne.selenide.Selenide.*;
 
+import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pom.PracticeFormPage;
 
@@ -14,6 +16,8 @@ import pom.PracticeFormPage;
 public class PracticeFormTest extends BaseTest {
 
     @Test
+    @Epic(value = "Forms")
+    @DisplayName("Проверка возможности заполнения всех полей практической формы")
     public void practiceFormTest() {
         open("https://demoqa.com/automation-practice-form");
 

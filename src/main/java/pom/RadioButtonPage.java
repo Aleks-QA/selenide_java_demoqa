@@ -1,6 +1,7 @@
 package pom;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -27,6 +28,7 @@ public class RadioButtonPage {
     /**
      * Выбор радиокнопки Impressive.
      */
+    @Step("Выбор радиокнопки Impressive")
     public void clickImpressiveRadioButton() {
         impressiveRadioButton.click();
     }
@@ -34,6 +36,7 @@ public class RadioButtonPage {
     /**
      * Выбрать радиокнопку Yes.
      */
+    @Step("Выбрать радиокнопку Yes")
     public void clickYesRadioButton() {
         yesRadioButton.click();
     }
@@ -43,6 +46,7 @@ public class RadioButtonPage {
      *
      * @return String
      */
+    @Step("Вернуть текст сообщения о выбранной радио-кнопке")
     public String getMessage() {
         fieldMessage.shouldBe(visible);
         return fieldMessage.getText();

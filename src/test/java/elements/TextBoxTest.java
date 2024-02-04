@@ -1,6 +1,8 @@
 package elements;
 
+import io.qameta.allure.Epic;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pom.TextBoxPage;
 
@@ -10,6 +12,8 @@ import static com.codeborne.selenide.Selenide.*;
 public class TextBoxTest extends BaseTest {
 
     @Test
+    @Epic(value = "Elements")
+    @DisplayName("Проверка возможности заполнения полей ввода")
     public void testTextBox() {
         open("https://demoqa.com/text-box");
 

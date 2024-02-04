@@ -1,6 +1,7 @@
 package pom;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -60,87 +61,97 @@ public class TextBoxPage {
     private final SelenideElement fieldOutputPermanentAddress = $x("//div[@id=\"output\"]/div/p[4]");
 
     /**
-     * Ввести имя.
+     * Ввод имени.
      *
      * @param name имя
      */
+    @Step("Ввод имени")
     public void setFullName(final String name) {
         fieldFullName.scrollIntoView(true).setValue(name);
     }
 
     /**
-     * Ввести почту.
+     * Ввод почты.
      *
      * @param email почта
      */
+    @Step("Ввод почты")
     public void setEmail(final String email) {
         fieldEmail.scrollIntoView(true).setValue(email);
     }
 
     /**
-     * Ввести текущий адрес.
+     * Ввод текущего адреса.
      *
      * @param currentAddress текущий адрес
      */
+    @Step("Ввод текущего адреса")
     public void setCurrentAddress(final String currentAddress) {
         fieldCurrentAddress.scrollIntoView(true).setValue(currentAddress);
     }
 
     /**
-     * Ввести постоянный адрес.
+     * Ввод постоянного адреса.
      *
      * @param permanentAddress постоянный адрес
      */
+    @Step("Ввод постоянного адреса")
     public void setPermanentAddress(final String permanentAddress) {
         fieldPermanentAddress.scrollIntoView(true).setValue(permanentAddress);
     }
 
     /**
-     * Отправить форму.
+     * Отправка формы.
      */
+    @Step("Отправка формы")
     public void clickSubmit() {
         submitButton.scrollIntoView(true).click();
     }
 
     /**
-     * Проверить видимость поля вывода введенных значений.
+     * Проверка видимости поля вывода введенных значений.
      */
+    @Step("Проверка видимости поля вывода введенных значений")
     public void visibilityFieldOutput() {
         fieldOutput.shouldBe(visible);
     }
 
     /**
-     * Получить имя из поля вывода
+     * Получение имени из поля вывода
      *
      * @return String - имя
      */
+    @Step("Получение имени из поля вывода")
     public String getOutputFullName() {
         return fieldOutputFullName.getText();
     }
 
     /**
-     * Получить почту из поля вывода
+     * Получение почты из поля вывода
      *
      * @return String - почта
      */
+    @Step("Получение почты из поля вывода")
     public String getOutputEmail() {
         return fieldOutputEmail.getText();
     }
 
     /**
-     * Получить текущий адрес из поля вывода
+     * Получение текущего адреса из поля вывода
      *
      * @return String - текущий адрес
      */
+    @Step("Получение текущего адреса из поля вывода")
     public String getOutputCurrentAddress() {
         return fieldOutputCurrentAddress.getText();
     }
 
     /**
-     * Получить постоянный адрес из поля вывода
+     * Получение постоянного адреса из поля вывода
      *
      * @return String - постоянный адрес
      */
+    @Step("Получение постоянного адреса из поля вывода")
     public String getOutputPermanentAddress() {
         return fieldOutputPermanentAddress.getText();
     }

@@ -1,6 +1,7 @@
 package pom;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
@@ -42,6 +43,7 @@ public class ButtonsPage {
     /**
      * Сделать двойной клик по кнопке doubleClickBtn.
      */
+    @Step("Сделать двойной клик по кнопке doubleClickBtn")
     public void doubleClick() {
         doubleClickBtn.doubleClick();
     }
@@ -49,22 +51,25 @@ public class ButtonsPage {
     /**
      * Нажать ПКМ по кнопке rightClickBtn.
      */
+    @Step("Нажать ПКМ по кнопке rightClickBtn")
     public void rightClick() {
         rightClickBtn.contextClick();
     }
 
     /**
-     * Нажать на кнопку dynamicClickBtn.
+     * Нажать ЛКМ на кнопку dynamicClickBtn.
      */
+    @Step("Нажать ЛКМ на кнопку dynamicClickBtn")
     public void dynamicClick() {
         dynamicClickBtn.click();
     }
 
     /**
-     * Получить сообщение о нажатии кнопки doubleClickBtn.
+     * Вернуть сообщение о нажатии кнопки doubleClickBtn.
      *
      * @return String сообщение о нажатии кнопки doubleClickBtn.
      */
+    @Step("Вернуть сообщение о нажатии кнопки doubleClickBtn")
     public String getDoubleClickMessage() {
         return doubleClickMessage.getText();
     }
@@ -74,6 +79,7 @@ public class ButtonsPage {
      *
      * @return String сообщение о нажатии кнопки rightClickBtn.
      */
+    @Step("Вернуть сообщение о нажатии кнопки rightClickBtn")
     public String getRightClickMessage() {
         return rightClickMessage.getText();
     }
@@ -83,6 +89,7 @@ public class ButtonsPage {
      *
      * @return String сообщение о нажатии кнопки dynamicClickBtn.
      */
+    @Step("Вернуть сообщение о нажатии кнопки dynamicClickBtn.")
     public String getDynamicClickMessage() {
         return dynamicClickMessage.getText();
     }

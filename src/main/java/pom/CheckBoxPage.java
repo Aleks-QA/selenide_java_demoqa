@@ -2,6 +2,7 @@ package pom;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,14 +39,15 @@ public class CheckBoxPage {
     /**
      * Отметить все элементы дерева.
      */
+    @Step("Отметить все элементы дерева")
     public void checkAllTheBoxes() {
         checkBox.click();
     }
 
     /**
-     * Если найден элемент с классом который говорит что раздел не раскрыт,
-     * то открываем его, иначе выходим
+     * Метод ищет элемент с классом который говорит что раздел не раскрыт, и открывает его.
      */
+    @Step("Метод ищет элемент с классом который говорит что раздел не раскрыт, и открывает его")
     public void uncoverAllTheElementsTree() {
         while (true) {
             if (buttonCollapseTree.exists()) {
@@ -57,10 +59,11 @@ public class CheckBoxPage {
     }
 
     /**
-     * Перебираем все элементы дерева и берем из них текст
+     * Метод перебирает все элементы дерева и берет из них текст, возвращает список
      *
      * @return List<String>
      */
+    @Step("Метод перебирает все элементы дерева и берет из них текст, возвращает список")
     public List<String> getAllTitlesTree() {
         List<String> strArr = new ArrayList<>();
         ElementsCollection section = titleElementTree;
@@ -77,6 +80,7 @@ public class CheckBoxPage {
      *
      * @return ElementCollection
      */
+    @Step("Вернуть сообщение об отмеченных элементах")
     public ElementsCollection returnMessageSuccess() {
         return messageSuccess;
     }

@@ -2,6 +2,7 @@ package pom;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import java.io.File;
 
@@ -125,61 +126,68 @@ public class PracticeFormPage {
     private final SelenideElement fieldCurrentAddressPracticeForm = Selenide.$x("//tbody/tr[9]/td[2]");
 
     /**
-     * Удалить footer.
+     * Удаление footer.
      */
+    @Step("Удаление footer")
     public void removeFooter() {
         executeJavaScript("$('footer').hide();");
     }
 
     /**
-     * Заполнить firstName.
+     * Ввод имени пользователя.
      *
      * @param firstName Имя.
      */
+    @Step("Ввод имени пользователя")
     public void setFirstName(final String firstName) {
         inputFirstName.setValue(firstName);
     }
 
     /**
-     * Заполнить lastName.
+     * Ввод фамилии пользователя.
      *
      * @param lastName Фамилия.
      */
+    @Step("Ввод фамилии пользователя")
     public void setLastName(final String lastName) {
         inputLastName.setValue(lastName);
     }
 
     /**
-     * Заполнить email.
+     * Ввод email.
      *
      * @param email - email пользователя.
      */
+    @Step("Ввод email")
     public void setEmail(final String email) {
         inputEmail.setValue(email);
     }
 
     /**
-     * Выбрать случайный gender.
+     * Выбор случайной радио-кнопки gender.
      */
+    @Step("Выбор случайной радио-кнопки gender")
     public void clickRandomGender() {
         randomGenderRadioButton.click();
     }
 
     /**
-     * Заполнить "Number".
+     * Ввод номера телефона.
      *
      * @param number - номер телефона.
      */
+    @Step("Ввод номера телефона")
     public void setNumber(final String number) {
         inputNumber.setValue(number);
     }
 
     /**
-     * Выбрать "Date of Birth".
+     * Выбор "Date of Birth".
      *
      * @param year  - год
      * @param month - месяц
      */
+    @Step("Выбор \"Date of Birth\"")
     public void setDateOfBirth(final String month, final String year) {
         fieldDateOfBirth.click();
         selectMonthDateOfBirth.selectOption(month);
@@ -188,45 +196,50 @@ public class PracticeFormPage {
     }
 
     /**
-     * Заполнить поле Subjects.
+     * Ввод Subjects.
      *
      * @param subjects String
      */
+    @Step("Ввод Subjects")
     public void setSubjects(final String subjects) {
         inputSubjects.setValue(subjects).pressEnter();
     }
 
     /**
-     * Выбрать случайное хобби.
+     * Выбор случайной радио-кнопки хобби.
      */
+    @Step("Выбор случайной радио-кнопки хобби")
     public void clickRandomHobbies() {
         randomHobbiesRadioButton.click();
     }
 
     /**
-     * Загрузить картинку.
+     * Загрузка картинки.
      *
      * @param path String путь к картинке.
      */
+    @Step("Загрузка картинки")
     public void uploadPicture(final String path) {
         buttonUploadPicture.uploadFile(new File(path));
     }
 
     /**
-     * Заполнить "Current Address".
+     * Ввод текущего адреса.
      *
      * @param address String адрес.
      */
+    @Step("Ввод текущего адреса")
     public void setCurrentAddress(final String address) {
         inputCurrentAddress.setValue(address).pressEnter();
     }
 
     /**
-     * Заполнить "State and City".
+     * Заполнение "State and City".
      *
      * @param state String штат.
      * @param city  String город.
      */
+    @Step("Заполнение \"State and City\"")
     public void setStateAndCity(final String state, final String city) {
         dropDownState.scrollIntoView(true).click();
         selectState.scrollIntoView(true).$(byText(state)).click();
@@ -237,6 +250,7 @@ public class PracticeFormPage {
     /**
      * Кликнуть кнопку "Submit".
      */
+    @Step("Кликнуть кнопку \"Submit\"")
     public void clickSubmitButton() {
         buttonSubmit.scrollIntoView(true).click(usingJavaScript().offset(12, 22));
     }
@@ -246,6 +260,7 @@ public class PracticeFormPage {
      *
      * @return String
      */
+    @Step("Вернуть значение поля имени и фамилии из таблицы формы")
     public String getNamePracticeForm() {
         return fieldNamePracticeForm.getText();
     }
@@ -255,6 +270,7 @@ public class PracticeFormPage {
      *
      * @return String
      */
+    @Step("Вернуть значение поля номера телефона из таблицы формы")
     public String getNumberPracticeForm() {
         return fieldNumberPracticeForm.getText();
     }
@@ -264,6 +280,7 @@ public class PracticeFormPage {
      *
      * @return String
      */
+    @Step("Вернуть значение поля email из таблицы формы")
     public String getEmailPracticeForm() {
         return fieldEmailPracticeForm.getText();
     }
@@ -273,8 +290,8 @@ public class PracticeFormPage {
      *
      * @return String
      */
+    @Step("Вернуть значение поля адреса из таблицы формы")
     public String getAddressPracticeForm() {
         return fieldCurrentAddressPracticeForm.getText();
     }
-
 }
