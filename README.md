@@ -8,4 +8,5 @@
   <code>git clone https://github.com/Aleks-QA/selenide_java_demoqa.git</code></li>
   <li>Открыть проект на установленной IDE,</li>
   <li>Запустить тесты командой:<br><code>mvn clean test</code> </li>
+  <li>Запустить отчет Allure:<br><code>allure serve target/allure-results</code> </li>  
 </ol>
