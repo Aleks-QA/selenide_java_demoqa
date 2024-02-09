@@ -1,7 +1,10 @@
+import com.codeborne.selenide.DownloadOptions;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import java.io.File;
 import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.FileDownloadMode.FOLDER;
 import static com.codeborne.selenide.Selenide.*;
 
 public class SelenideDoc {
@@ -19,7 +22,8 @@ public class SelenideDoc {
 //        $("#doubleClickBtn").doubleClick(); // двойной клик
 //        $("#doubleClickBtn").contextClick(); // ПКМ
 //        $(By.id("userName")).scrollIntoView(true).setValue("qwerty");// скроллинг
-//        $("[id=uploadPicture]").uploadFile(new File("./src/main/java/test_data/picture.jpg"));        //загрузить картинку в разделе Picture
+//        $("[id=uploadPicture]").uploadFile(new File("./src/main/java/test_data/picture.jpg")); //отправить картинку из раздела Picture
+//        File downloadedFile = downloadFileButton.download(DownloadOptions.using(FOLDER).withTimeout(10000)); // скачать файл
 
 //        Assert.assertTrue(textBoxPage.getOutputFullName().contains(fullName)); // проверка вхождения подстроки в строке JUNIT4
 //        executeJavaScript("$('footer').hide();");//удалить элемент
@@ -32,5 +36,6 @@ public class SelenideDoc {
 //        $ (cssSelector).text();        //Что бы просто вытащить текст элемента используйте
 //        $ (cssSelector).shouldHave(text(“Ваш_текст”));        //Что бы проверить содержится ли нужный вам текст в элементе
 //        $x("//div[@id=\"output\"]/div/p[1]").shouldHave(text("qwerty")); // наличие текста в элементе в виде подстроки
+//        Assertions.assertTrue(textBoxPage.getOutputFullName().contains(fullName));        // проверка вхождения переменной в соответствующих полях ввода
     }
 }
