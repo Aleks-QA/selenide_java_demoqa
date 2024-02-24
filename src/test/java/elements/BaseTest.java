@@ -24,9 +24,9 @@ abstract public class BaseTest {
     }
 
     @AfterEach()
-    @Step("Закрытие браузера")
+    @Step("Окончание теста")
     public void tearDown() {
-        Selenide.closeWindow();
+//        Selenide.closeWindow();
     }
 
 }

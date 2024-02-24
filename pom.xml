@@ -38,7 +38,7 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-chrome-driver</artifactId>
-      <version>4.16.1</version>
+      <version>RELEASE</version>
     </dependency>
 <!--    <dependency>-->
 <!--      <groupId>io.github.bonigarcia</groupId>-->
@@ -48,7 +48,7 @@
     <dependency>
       <groupId>com.codeborne</groupId>
       <artifactId>selenide</artifactId>
-      <version>7.0.4</version>
+      <version>RELEASE</version>
     </dependency>
   </dependencies>
     <build>
