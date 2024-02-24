@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
 /**
- * Страница "TextBox"
+ * Страница "TextBox".
  */
 public class TextBoxPage {
     /**
@@ -117,7 +117,7 @@ public class TextBoxPage {
     }
 
     /**
-     * Получение имени из поля вывода
+     * Получение имени из поля вывода.
      *
      * @return String - имя
      */
@@ -127,7 +127,7 @@ public class TextBoxPage {
     }
 
     /**
-     * Получение почты из поля вывода
+     * Получение почты из поля вывода.
      *
      * @return String - почта
      */
@@ -137,7 +137,7 @@ public class TextBoxPage {
     }
 
     /**
-     * Получение текущего адреса из поля вывода
+     * Получение текущего адреса из поля вывода.
      *
      * @return String - текущий адрес
      */
@@ -147,7 +147,7 @@ public class TextBoxPage {
     }
 
     /**
-     * Получение постоянного адреса из поля вывода
+     * Получение постоянного адреса из поля вывода.
      *
      * @return String - постоянный адрес
      */

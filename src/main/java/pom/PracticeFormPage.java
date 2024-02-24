@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 /**
- * Страница "PracticeForm"
+ * Страница "PracticeForm".
  */
 public class PracticeFormPage {
 
@@ -256,7 +256,7 @@ public class PracticeFormPage {
     }
 
     /**
-     * Вернуть значение поля имени и фамилии из таблицы формы
+     * Вернуть значение поля имени и фамилии из таблицы формы.
      *
      * @return String
      */
@@ -266,7 +266,7 @@ public class PracticeFormPage {
     }
 
     /**
-     * Вернуть значение поля номера телефона из таблицы формы
+     * Вернуть значение поля номера телефона из таблицы формы.
      *
      * @return String
      */
@@ -276,7 +276,7 @@ public class PracticeFormPage {
     }
 
     /**
-     * Вернуть значение поля email из таблицы формы
+     * Вернуть значение поля email из таблицы формы.
      *
      * @return String
      */
@@ -286,7 +286,7 @@ public class PracticeFormPage {
     }
 
     /**
-     * Вернуть значение поля адреса из таблицы формы
+     * Вернуть значение поля адреса из таблицы формы.
      *
      * @return String
      */

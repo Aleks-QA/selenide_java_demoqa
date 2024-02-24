@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 /**
- * Страница "RadioButton"
+ * Страница "RadioButton".
  */
 public class RadioButtonPage {
     /**
@@ -42,7 +42,7 @@ public class RadioButtonPage {
     }
 
     /**
-     * Вернуть текст сообщения о выбранной радио-кнопке
+     * Вернуть текст сообщения о выбранной радио-кнопке.
      *
      * @return String
      */
